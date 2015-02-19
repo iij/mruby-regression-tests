@@ -14,7 +14,8 @@ assert('regression #1665') do
 end
 
 assert('regression #1710') do
-  assert_equal "1.0e+100", (10.0**100).to_s
+  s = (10.0**100).to_s
+  assert_true (s == "1.0e+100" or s == "1e+100")
 end
 
 assert('regression #1712') do
@@ -22,16 +23,21 @@ assert('regression #1712') do
 end
 
 assert('regression #1713') do
-  assert_equal "1.0e+200", (10.0**200).inspect
+  s = (10.0**200).inspect
+  assert_true (s == "1.0e+200" or s == "1e+200")
 end
 
 assert('regression b4bc39568060d365829d2ace0f84f0ba382bfeb1') do
-  assert_equal "1.0e+36", (10**36).inspect
+  s = (10**36).inspect
+  assert_true (s == "1.0e+36" or s == "1e+36")
 end
 
 assert('regression #1716') do
-  assert_equal "-0.0", ((-1)/(1/0)).to_s
-  assert_equal "-0.0", (1/((-1)/0)).to_s
+  s = ((-1)/(1/0)).to_s
+  assert_true (s == "-0.0" or s == "-0")
+
+  s = (1/((-1)/0)).to_s
+  assert_true (s == "-0.0" or s == "-0")
 end
 
 assert('regression #1746') do
