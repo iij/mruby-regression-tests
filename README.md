@@ -5,7 +5,7 @@ Regression tests for mruby interpreter.
 
 ## Usage
 
-1. add `conf.gem :github => 'iij/mruby-regression-tests' to your build_config.rb
+1. add `conf.gem :github => 'iij/mruby-regression-tests'` to your build_config.rb
 2. rake test
 
 To run *danger* scripts that may crash mruby interpreter:
