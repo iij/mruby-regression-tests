@@ -80,20 +80,6 @@ assert('regression #1970') do
   assert_true h.has_key?(:b)
 end
 
-assert('regression #1983') do
-  module Issue1983
-    class FooModInner
-    end
-    class << self
-      FooModInner
-      class << self
-        FooModInner
-      end
-    end
-  end
-  true
-end
-
 assert('regression #1992') do
   class Issue1992
     def bar(&block)
