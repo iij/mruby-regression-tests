@@ -51,14 +51,6 @@ assert('regression #1746') do
   end
 end
 
-assert('regression #1766') do
-  loop do
-    Fiber.new { break }.resume
-    break
-  end
-  true
-end
-
 assert('regression #1786') do
   excs = [ NameError, ArgumentError ]
   e0 = nil
