@@ -18,10 +18,6 @@ assert('regression #1710') do
   assert_true (s == "1.0e+100" or s == "1e+100")
 end
 
-assert('regression #1712') do
-  assert_equal "NaN", (0/0).inspect
-end
-
 assert('regression #1713') do
   s = (10.0**200).inspect
   assert_true (s == "1.0e+200" or s == "1e+200")
