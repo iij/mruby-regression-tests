@@ -3,7 +3,8 @@ assert('regression #1658') do
 end
 
 assert('regression #1662') do
-  assert_equal '"\240"', "\240".inspect
+  str = "\240".inspect
+  assert_true (str == '"\240"' or str == '"\xa0"')
 end
 
 assert('regression #1665') do
