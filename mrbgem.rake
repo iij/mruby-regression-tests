@@ -9,5 +9,7 @@ MRuby::Gem::Specification.new('mruby-regression-tests') do |spec|
   spec.add_dependency "mruby-time"  # for #2641
   spec.add_dependency "mruby-objectspace" # for #3050
 
-  spec.add_test_dependency "mruby-metaprog"
+  if Dir.exist?(File.join(MRUBY_ROOT, "mrbgems", "mruby-metaprog"))
+    spec.add_test_dependency "mruby-metaprog"
+  end
 end
